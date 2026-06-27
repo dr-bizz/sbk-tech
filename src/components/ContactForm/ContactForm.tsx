@@ -26,6 +26,11 @@ const validationSchema = Yup.object({
 
 const initialValues: ContactFormValues = { name: '', email: '', phone: '', message: '' };
 
+const encode = (data: Record<string, string>) =>
+  Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+
 const labelSx = { fontSize: '15px', fontWeight: 600, color: colors.text, mb: 0.75, display: 'block' };
 
 const inputSx = {
@@ -47,8 +52,12 @@ const ContactForm: React.FC = () => {
     { setSubmitting, resetForm }: { setSubmitting: (b: boolean) => void; resetForm: () => void }
   ) => {
     try {
-      console.log('Form submitted:', values);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const res = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', 'bot-field': '', ...values }),
+      });
+      if (!res.ok) throw new Error(`Submission failed with status ${res.status}`);
       enqueueSnackbar('Thank you for your message! We will get back to you soon.', { variant: 'success' });
       resetForm();
     } catch {

@@ -55,7 +55,9 @@ describe('ContactForm Component', () => {
     expect(await screen.findByText(/invalid phone number/i)).toBeInTheDocument();
   });
 
-  it('submits form with valid data', async () => {
+  it('submits form data to Netlify Forms', async () => {
+    const fetchMock = jest.fn().mockResolvedValue({ ok: true } as Response);
+    global.fetch = fetchMock as unknown as typeof fetch;
     const user = userEvent.setup();
     renderWithProviders(<ContactForm />);
 
@@ -69,8 +71,14 @@ describe('ContactForm Component', () => {
 
     await user.click(screen.getByRole('button', { name: /send message/i }));
 
-    await waitFor(() => {
-      expect(screen.getByText(/sending/i)).toBeInTheDocument();
-    });
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+
+    const [url, options] = fetchMock.mock.calls[0];
+    expect(url).toBe('/__forms.html');
+    expect(options?.method).toBe('POST');
+    expect(String(options?.body)).toContain('form-name=contact');
+    expect(String(options?.body)).toContain('name=John');
+
+    expect(await screen.findByText(/thank you for your message/i)).toBeInTheDocument();
   });
 });
