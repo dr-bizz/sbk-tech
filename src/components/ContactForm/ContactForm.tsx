@@ -1,11 +1,32 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
 import { Box, Button, Typography, CircularProgress, InputBase } from '@mui/material';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useSnackbar } from 'notistack';
 import { colors } from '@/styles/theme';
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      render: (
+        container: HTMLElement,
+        params: {
+          sitekey: string;
+          callback: (token: string) => void;
+          'expired-callback'?: () => void;
+        }
+      ) => number;
+      reset: (widgetId?: number) => void;
+    };
+  }
+}
+
+// Set NEXT_PUBLIC_RECAPTCHA_SITE_KEY in the environment to enable reCAPTCHA.
+// When unset (e.g. local dev / tests), the widget is skipped so the form still works.
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 interface ContactFormValues {
   name: string;
@@ -47,19 +68,65 @@ const inputSx = {
 const ContactForm: React.FC = () => {
   const { enqueueSnackbar } = useSnackbar();
 
+  const recaptchaContainerRef = useRef<HTMLDivElement | null>(null);
+  const recaptchaWidgetId = useRef<number | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState('');
+
+  // Render the reCAPTCHA v2 widget once its script is available.
+  const renderRecaptcha = () => {
+    if (
+      !RECAPTCHA_SITE_KEY ||
+      !window.grecaptcha ||
+      !recaptchaContainerRef.current ||
+      recaptchaWidgetId.current !== null
+    ) {
+      return;
+    }
+    recaptchaWidgetId.current = window.grecaptcha.render(recaptchaContainerRef.current, {
+      sitekey: RECAPTCHA_SITE_KEY,
+      callback: (token) => setRecaptchaToken(token),
+      'expired-callback': () => setRecaptchaToken(''),
+    });
+  };
+
+  // Handles the case where the script was already loaded (cached) before mount.
+  useEffect(() => {
+    renderRecaptcha();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const resetRecaptcha = () => {
+    setRecaptchaToken('');
+    if (recaptchaWidgetId.current !== null) {
+      window.grecaptcha?.reset(recaptchaWidgetId.current);
+    }
+  };
+
   const handleSubmit = async (
     values: ContactFormValues,
     { setSubmitting, resetForm }: { setSubmitting: (b: boolean) => void; resetForm: () => void }
   ) => {
+    if (RECAPTCHA_SITE_KEY && !recaptchaToken) {
+      enqueueSnackbar('Please confirm you are not a robot.', { variant: 'warning' });
+      setSubmitting(false);
+      return;
+    }
+
     try {
       const res = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', 'bot-field': '', ...values }),
+        body: encode({
+          'form-name': 'contact',
+          'bot-field': '',
+          'g-recaptcha-response': recaptchaToken,
+          ...values,
+        }),
       });
       if (!res.ok) throw new Error(`Submission failed with status ${res.status}`);
       enqueueSnackbar('Thank you for your message! We will get back to you soon.', { variant: 'success' });
       resetForm();
+      resetRecaptcha();
     } catch {
       enqueueSnackbar('Failed to send message. Please try again.', { variant: 'error' });
     } finally {
@@ -69,6 +136,13 @@ const ContactForm: React.FC = () => {
 
   return (
     <Box sx={{ maxWidth: 640 }}>
+      {RECAPTCHA_SITE_KEY && (
+        <Script
+          src="https://www.google.com/recaptcha/api.js?render=explicit"
+          strategy="afterInteractive"
+          onLoad={renderRecaptcha}
+        />
+      )}
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
         {({ isSubmitting, errors, touched, values, handleChange, handleBlur }) => {
           const field = (
@@ -103,28 +177,14 @@ const ContactForm: React.FC = () => {
               {field('phone', 'Phone Number')}
               {field('message', 'Your message', { required: true, multiline: true })}
 
-              <Box sx={{ mb: 3 }}>
-                <Typography component="label" sx={labelSx}>
-                  reCaptcha <span>*</span>
-                </Typography>
-                <Box
-                  sx={{
-                    width: 304,
-                    maxWidth: '100%',
-                    height: 78,
-                    border: '1px solid #d3d3d3',
-                    borderRadius: '3px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    px: 1.5,
-                    gap: 1.5,
-                    backgroundColor: '#f9f9f9',
-                  }}
-                >
-                  <Box sx={{ width: 28, height: 28, border: '2px solid #c1c1c1', borderRadius: '2px' }} />
-                  <Typography sx={{ fontSize: '14px', color: '#555' }}>I&apos;m not a robot</Typography>
+              {RECAPTCHA_SITE_KEY && (
+                <Box sx={{ mb: 3 }}>
+                  <Typography component="label" sx={labelSx}>
+                    reCAPTCHA <span>*</span>
+                  </Typography>
+                  <Box ref={recaptchaContainerRef} />
                 </Box>
-              </Box>
+              )}
 
               <Button type="submit" variant="contained" disabled={isSubmitting} sx={{ px: 4 }}>
                 {isSubmitting ? (
