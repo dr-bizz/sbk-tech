@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #3d3c40;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+/* ------------------------------------------------------------------ */
+/* Faded decorative section text — ported verbatim from the original   */
+/* WordPress theme (.background--section--text). The staggered overlap  */
+/* comes from per-word negative margins keyed off data-letter-count.    */
+/* ------------------------------------------------------------------ */
+.background--section--text {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.background--section--text span {
+  font-size: 150px;
+  display: block;
+  line-height: 1;
+  font-weight: 100;
+  color: #ebf2f9;
+  text-transform: uppercase;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  .background--section--text span {
+    font-size: 100px;
+  }
+}
+
+.background--section--text span:nth-child(2n + 1)[data-letter-count='2'] {
+  margin-right: -159px;
+}
+.background--section--text span:nth-child(2n + 1)[data-letter-count='3'] {
+  margin-right: -190px;
+}
+.background--section--text span:nth-child(2n + 2)[data-letter-count='3'] {
+  margin-left: -130px;
+}
+.background--section--text span:nth-child(2n + 2)[data-letter-count='1'] {
+  margin-left: 20px;
+}
+
+@media (max-width: 500px) {
+  .background--section--text span:nth-child(2n + 1)[data-letter-count='2'] {
+    margin-right: -75px;
+  }
+  .background--section--text span:nth-child(2n + 1)[data-letter-count='3'] {
+    margin-right: -64px;
+  }
+  .background--section--text span:nth-child(2n + 2)[data-letter-count='3'] {
+    margin-right: -57px;
+  }
+  .background--section--text span:nth-child(2n + 2)[data-letter-count='1'] {
+    margin-left: -37px;
+  }
+}
+
+/* Page-level watermark (consultancy header): higher up, longer offsets */
+.page-watermark .background--section--text {
+  top: 20px;
+}
+.page-watermark .background--section--text span[data-letter-count='4'] {
+  margin-right: -290px;
+}
+@media (max-width: 900px) {
+  .page-watermark .background--section--text span {
+    opacity: 0.4;
+  }
+}
+@media (max-width: 800px) {
+  .page-watermark .background--section--text span[data-letter-count='3'] {
+    margin-right: -130px;
+  }
+  .page-watermark .background--section--text span[data-letter-count='4'] {
+    margin-right: -180px;
+  }
+}
+@media (max-width: 700px) {
+  .page-watermark .background--section--text {
+    top: 0;
+  }
+}
+@media (max-width: 500px) {
+  .page-watermark .background--section--text span[data-letter-count='3'] {
+    margin-right: 0;
+  }
+  .page-watermark .background--section--text span[data-letter-count='4'] {
+    margin-right: -50px;
+  }
+}
+
+/* CTA watermark: dark-grey background → very faint, pulled up */
+.cta .background--section--text {
+  top: -50px;
+}
+.background--dark-grey .background--section--text span {
+  opacity: 0.1;
+}
+@media (max-width: 500px) {
+  .cta .background--section--text {
+    top: 0;
+  }
+}

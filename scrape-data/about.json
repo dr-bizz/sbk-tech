@@ -1,0 +1,128 @@
+{
+  "title": "About Southbrook Technologies | Southbrook Technologies",
+  "bodyFont": "sans-serif",
+  "bodyColor": "rgb(61, 60, 64)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyFontSize": "16px",
+  "imgs": [
+    {
+      "src": "https://southbrook-tech.com/wp-content/uploads/2019/10/logo.png",
+      "alt": "SOUTHBROOK TECHNOLOGIES",
+      "w": 183,
+      "h": 169,
+      "dispW": 70,
+      "dispH": 65
+    }
+  ],
+  "bgs": [],
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "About",
+      "fontSize": "30px",
+      "fontWeight": "300",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "45px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "0px",
+      "marginBottom": "30px"
+    },
+    {
+      "tag": "H3",
+      "text": "",
+      "fontSize": "30px",
+      "fontWeight": "300",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "45px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "0px",
+      "marginBottom": "30px"
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Consultancy",
+      "href": "https://southbrook-tech.com/consultancy/"
+    },
+    {
+      "text": "Business Development",
+      "href": "https://southbrook-tech.com/3d-printing/business-development/"
+    },
+    {
+      "text": "About",
+      "href": "https://southbrook-tech.com/about/"
+    },
+    {
+      "text": "Contact",
+      "href": "https://southbrook-tech.com/contact/"
+    },
+    {
+      "text": "",
+      "href": "https://southbrook-tech.com/"
+    },
+    {
+      "text": "SOUTHBROOK TECHNOLOGIES",
+      "href": "https://southbrook-tech.com/"
+    },
+    {
+      "text": "Consultancy",
+      "href": "https://southbrook-tech.com/consultancy/"
+    },
+    {
+      "text": "Business Development",
+      "href": "https://southbrook-tech.com/3d-printing/business-development/"
+    },
+    {
+      "text": "About",
+      "href": "https://southbrook-tech.com/about/"
+    },
+    {
+      "text": "Contact",
+      "href": "https://southbrook-tech.com/contact/"
+    },
+    {
+      "text": ".st0{fill-rule:evenodd;clip-rule:evenodd;fill:#3D3C40;}",
+      "href": "tel:(770) 403-0914"
+    }
+  ],
+  "sections": [
+    {
+      "cls": "site-header",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(61, 60, 64)",
+      "padding": "0px",
+      "top": 0,
+      "height": 75
+    },
+    {
+      "cls": "about-text background--section",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(61, 60, 64)",
+      "padding": "70px 0px 150px",
+      "top": 100,
+      "height": 705
+    },
+    {
+      "cls": "whats-a-Manufacturers-rep background--light-blue",
+      "bg": "rgb(245, 248, 253)",
+      "color": "rgb(61, 60, 64)",
+      "padding": "70px 0px",
+      "top": 805,
+      "height": 170
+    },
+    {
+      "cls": "site-footer",
+      "bg": "rgb(44, 44, 46)",
+      "color": "rgb(255, 255, 255)",
+      "padding": "0px",
+      "top": 975,
+      "height": 52
+    }
+  ],
+  "text": "Skip to content SOUTHBROOK TECHNOLOGIES Manufacturer's representative for the advanced composites industry Consultancy Business Development About Contact About Southbrook Technologies was founded by Steven D. Zeller, bringing over 40 years of \"hands on\" aerospace manufacturing engineering experience. Mr. Zeller earned a B.A. Degree from Miami University in Oxford, Ohio and has studied Electronic Engineering Technology at Sinclair College in Dayton, Ohio. Mr. Zeller holds both FAA Pilot and Airframe and Powerplant Mechanics (A&P) licenses. Mr. Zeller worked in sales engineering for Garrett Airesearch (now Honeywell) in the Torrance, California and Atlanta, Georgia offices from 1983 to 1987 Primary responsibilities included technical support on the Gulfstream GIV certification and Lockheed C5B programs. In 1987, Mr Zeller assumed the position of Sales Manager for BP Advanced Materials Division (HITCO) Insulation Products and was responsible for both the Gardena, California and Atlanta, Georgia manufacturing facilities. It was at this time that Mr. Zeller became heavily involved in manufacturing tooling and process development in an effort to improve both product quality and profit margins. HITCO was struggling to compete in an increasingly difficult marketplace. Improvements in tooling and manufacturing process and the resulting reduction in production costs made it possible to win significant new business. Since 1991, Southbrook Technologies has worked closely with composite manufacturing and repair customers in Aerospace, Industrial, Marine and Sporting Goods markets throughout the Southeastern United States, assisting with efforts to improve product yield, quality and profitability. SOUTH BROOK TECH © SouthBrook Technologies, 2026",
+  "fullHeight": 1027
+}

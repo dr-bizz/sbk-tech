@@ -1,0 +1,275 @@
+{
+  "title": "Southbrook Technologies - Composite Manufacturing Tooling And Materials Specialist",
+  "bodyFont": "sans-serif",
+  "bodyColor": "rgb(61, 60, 64)",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyFontSize": "16px",
+  "imgs": [
+    {
+      "src": "https://southbrook-tech.com/wp-content/uploads/2019/10/logo.png",
+      "alt": "SOUTHBROOK TECHNOLOGIES",
+      "w": 183,
+      "h": 169,
+      "dispW": 70,
+      "dispH": 65
+    },
+    {
+      "src": "https://southbrook-tech.com/wp-content/uploads/2019/10/new-homepage.jpg",
+      "alt": "SOUTHBROOK TECHNOLOGIES, INC.",
+      "w": 356,
+      "h": 539,
+      "dispW": 480,
+      "dispH": 727
+    },
+    {
+      "src": "https://southbrook-tech.com/wp-content/themes/bw-sbk/images/presents.svg",
+      "alt": "Targeted Expertise",
+      "w": 150,
+      "h": 150,
+      "dispW": 110,
+      "dispH": 110
+    },
+    {
+      "src": "https://southbrook-tech.com/wp-content/themes/bw-sbk/images/keep-records.svg",
+      "alt": "Flexible Support, Real Results",
+      "w": 150,
+      "h": 150,
+      "dispW": 110,
+      "dispH": 110
+    },
+    {
+      "src": "https://southbrook-tech.com/wp-content/themes/bw-sbk/images/save-money.svg",
+      "alt": "A Trusted Partner in Your Workflow",
+      "w": 150,
+      "h": 150,
+      "dispW": 110,
+      "dispH": 110
+    },
+    {
+      "src": "https://southbrook-tech.com/wp-content/uploads/2020/06/quote-marks-1.png",
+      "alt": "reviews",
+      "w": 54,
+      "h": 36,
+      "dispW": 54,
+      "dispH": 36
+    }
+  ],
+  "bgs": [],
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Southbrook Technologies",
+      "fontSize": "32px",
+      "fontWeight": "400",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "48px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "marginTop": "21.44px",
+      "marginBottom": "21.44px"
+    },
+    {
+      "tag": "H2",
+      "text": "Composite Manufacturing Tooling And Materials Specialist",
+      "fontSize": "26px",
+      "fontWeight": "200",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "39px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "21.58px",
+      "marginBottom": "21.58px"
+    },
+    {
+      "tag": "H3",
+      "text": ".st0{fill:#2C2C2E;}",
+      "fontSize": "18.72px",
+      "fontWeight": "700",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "28.08px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "0px",
+      "marginBottom": "10px"
+    },
+    {
+      "tag": "H3",
+      "text": "Book an appointment today",
+      "fontSize": "26px",
+      "fontWeight": "300",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "39px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "26px",
+      "marginBottom": "26px"
+    },
+    {
+      "tag": "H3",
+      "text": "Why Work with a Composite Process Specialist:",
+      "fontSize": "30px",
+      "fontWeight": "300",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "45px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "0px",
+      "marginBottom": "30px"
+    },
+    {
+      "tag": "H4",
+      "text": "Targeted Expertise",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "30px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "26.6px",
+      "marginBottom": "26.6px"
+    },
+    {
+      "tag": "H4",
+      "text": "Flexible Support, Real Results",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "30px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "26.6px",
+      "marginBottom": "26.6px"
+    },
+    {
+      "tag": "H4",
+      "text": "A Trusted Partner in Your Workflow",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "fontFamily": "sans-serif",
+      "color": "rgb(61, 60, 64)",
+      "lineHeight": "30px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "26.6px",
+      "marginBottom": "26.6px"
+    },
+    {
+      "tag": "H3",
+      "text": "Find out how Southbrook Tech can help you today.",
+      "fontSize": "29px",
+      "fontWeight": "200",
+      "fontFamily": "sans-serif",
+      "color": "rgb(255, 255, 255)",
+      "lineHeight": "43.5px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "marginTop": "0px",
+      "marginBottom": "30px"
+    }
+  ],
+  "navLinks": [
+    {
+      "text": "Consultancy",
+      "href": "https://southbrook-tech.com/consultancy/"
+    },
+    {
+      "text": "Business Development",
+      "href": "https://southbrook-tech.com/3d-printing/business-development/"
+    },
+    {
+      "text": "About",
+      "href": "https://southbrook-tech.com/about/"
+    },
+    {
+      "text": "Contact",
+      "href": "https://southbrook-tech.com/contact/"
+    },
+    {
+      "text": "",
+      "href": "https://southbrook-tech.com/"
+    },
+    {
+      "text": "SOUTHBROOK TECHNOLOGIES",
+      "href": "https://southbrook-tech.com/"
+    },
+    {
+      "text": "Consultancy",
+      "href": "https://southbrook-tech.com/consultancy/"
+    },
+    {
+      "text": "Business Development",
+      "href": "https://southbrook-tech.com/3d-printing/business-development/"
+    },
+    {
+      "text": "About",
+      "href": "https://southbrook-tech.com/about/"
+    },
+    {
+      "text": "Contact",
+      "href": "https://southbrook-tech.com/contact/"
+    },
+    {
+      "text": ".st0{fill-rule:evenodd;clip-rule:evenodd;fill:#3D3C40;}",
+      "href": "tel:(770) 403-0914"
+    }
+  ],
+  "sections": [
+    {
+      "cls": "site-header",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(61, 60, 64)",
+      "padding": "0px",
+      "top": 0,
+      "height": 75
+    },
+    {
+      "cls": "master-top-section",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(61, 60, 64)",
+      "padding": "0px",
+      "top": 10,
+      "height": 734
+    },
+    {
+      "cls": "three-reasons background--light-blue",
+      "bg": "rgb(245, 248, 253)",
+      "color": "rgb(61, 60, 64)",
+      "padding": "70px 0px",
+      "top": 744,
+      "height": 487
+    },
+    {
+      "cls": "reviews background--white",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(61, 60, 64)",
+      "padding": "70px 0px",
+      "top": 1231,
+      "height": 338
+    },
+    {
+      "cls": "cta background--dark-grey background--section",
+      "bg": "rgb(44, 44, 46)",
+      "color": "rgb(255, 255, 255)",
+      "padding": "130px 0px",
+      "top": 1569,
+      "height": 371
+    },
+    {
+      "cls": "site-footer",
+      "bg": "rgb(44, 44, 46)",
+      "color": "rgb(255, 255, 255)",
+      "padding": "0px",
+      "top": 1939,
+      "height": 52
+    }
+  ],
+  "text": "Skip to content SOUTHBROOK TECHNOLOGIES Manufacturer's representative for the advanced composites industry Consultancy Business Development About Contact SOUTHBROOK TECHNOLOGIES Composite Manufacturing Tooling And Materials Specialist Southbrook Technologies specializes in production and repair tooling and processes for the advanced composites industry. We have been providing skilled manufacturing expertise and technical support to our clients since 1991. Think of us as your most productive employee, who isn't even an employee. Book an appointment today Book now Why Work with a Composite Process Specialist: Targeted Expertise Decades of hands-on experience in advanced composites, focused specifically on tooling, materials, and production processes. Flexible Support, Real Results Get expert-level guidance and technical support without the cost and commitment of hiring a full-time employee. A Trusted Partner in Your Workflow Seamless integration with your team to improve efficiency, troubleshoot challenges, and optimize production, without adding headcount. \"You were able to help us select the proper material for both the stretch die and holding fixture which was a huge help and when our engineering group had questions you were able to answer every question with detail. Then you even offered to make a trip to our facility to ensure that the proper bonding techniques were used, so we did not have the same failures we encountered with your competitors.\" SOUTH BROOK TECH Find out how Southbrook Tech can help you today. Get in touch © SouthBrook Technologies, 2026",
+  "fullHeight": 1991
+}
