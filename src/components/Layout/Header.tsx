@@ -52,7 +52,12 @@ const Header: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <AppBar position="static" color="default" elevation={0}>
+    <AppBar
+      position="sticky"
+      color="default"
+      elevation={0}
+      sx={{ top: 0, backgroundColor: colors.white, borderBottom: '1px solid #ececec' }}
+    >
       <Container>
         <Toolbar
           disableGutters
