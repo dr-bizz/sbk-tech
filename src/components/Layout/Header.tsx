@@ -29,19 +29,23 @@ const navigationItems = [
 
 const PHONE = '(770) 403-0914';
 
-const Logo = () => (
+const Logo = ({ scrolled }: { scrolled: boolean }) => (
   <Box
     component={Link}
     href="/"
     sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
   >
-    <Image
-      src="/images/logo.png"
-      alt="SOUTHBROOK TECHNOLOGIES"
-      width={70}
-      height={65}
-      priority
-    />
+    {/* Logo shrinks 70px → 60px on scroll, mirroring the original theme. */}
+    <Box sx={{ display: 'flex', width: scrolled ? 60 : 70, transition: 'width 0.3s ease' }}>
+      <Image
+        src="/images/logo.png"
+        alt="SOUTHBROOK TECHNOLOGIES"
+        width={70}
+        height={65}
+        priority
+        style={{ width: '100%', height: 'auto' }}
+      />
+    </Box>
   </Box>
 );
 
@@ -50,6 +54,16 @@ const Header: React.FC = () => {
   // The original theme collapses to the mobile layout below 600px.
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = React.useState(false);
+
+  // The original theme adds a `scrolled` class to <body> past 50px of scroll
+  // and shrinks the header via CSS. Replicate that toggle here.
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <AppBar
@@ -61,7 +75,11 @@ const Header: React.FC = () => {
       <Container>
         <Toolbar
           disableGutters
-          sx={{ minHeight: '75px !important', height: 75 }}
+          sx={{
+            minHeight: scrolled ? '60px !important' : '75px !important',
+            height: scrolled ? 60 : 75,
+            transition: 'min-height 0.3s ease, height 0.3s ease',
+          }}
         >
           {isMobile ? (
             <Box
@@ -79,10 +97,10 @@ const Header: React.FC = () => {
                 edge="end"
                 sx={{ color: colors.text, width: 48 }}
               >
-                <PhoneIcon sx={{ fontSize: 28 }} />
+                <PhoneIcon sx={{ fontSize: scrolled ? 24 : 28, transition: 'font-size 0.3s ease' }} />
               </IconButton>
 
-              <Logo />
+              <Logo scrolled={scrolled} />
 
               <IconButton
                 aria-label="menu"
@@ -90,12 +108,12 @@ const Header: React.FC = () => {
                 onClick={() => setOpen(true)}
                 sx={{ color: colors.text, width: 48 }}
               >
-                <MenuIcon sx={{ fontSize: 32 }} />
+                <MenuIcon sx={{ fontSize: scrolled ? 28 : 32, transition: 'font-size 0.3s ease' }} />
               </IconButton>
             </Box>
           ) : (
             <>
-              <Logo />
+              <Logo scrolled={scrolled} />
               <Box sx={{ display: 'flex', gap: 4, ml: 5 }}>
                 {navigationItems.map((item) => (
                   <Button
