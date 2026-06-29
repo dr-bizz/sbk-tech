@@ -11,7 +11,11 @@ import {
   IconButton,
   Container,
 } from '@mui/material';
-import { Menu as MenuIcon, Close as CloseIcon, Phone as PhoneIcon } from '@mui/icons-material';
+import {
+  Menu as MenuIcon,
+  Close as CloseIcon,
+  Phone as PhoneIcon,
+} from '@mui/icons-material';
 import Link from 'next/link';
 import Image from 'next/image';
 import { colors } from '@/styles/theme';
@@ -26,8 +30,18 @@ const navigationItems = [
 const PHONE = '(770) 403-0914';
 
 const Logo = () => (
-  <Box component={Link} href="/" sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-    <Image src="/images/logo.png" alt="SOUTHBROOK TECHNOLOGIES" width={70} height={65} priority />
+  <Box
+    component={Link}
+    href="/"
+    sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+  >
+    <Image
+      src="/images/logo.png"
+      alt="SOUTHBROOK TECHNOLOGIES"
+      width={70}
+      height={65}
+      priority
+    />
   </Box>
 );
 
@@ -40,7 +54,10 @@ const Header: React.FC = () => {
   return (
     <AppBar position="static" color="default" elevation={0}>
       <Container>
-        <Toolbar disableGutters sx={{ minHeight: '75px !important', height: 75 }}>
+        <Toolbar
+          disableGutters
+          sx={{ minHeight: '75px !important', height: 75 }}
+        >
           {isMobile ? (
             <Box
               sx={{
@@ -51,17 +68,6 @@ const Header: React.FC = () => {
               }}
             >
               <IconButton
-                aria-label="menu"
-                edge="start"
-                onClick={() => setOpen(true)}
-                sx={{ color: colors.text, width: 48 }}
-              >
-                <MenuIcon sx={{ fontSize: 32 }} />
-              </IconButton>
-
-              <Logo />
-
-              <IconButton
                 component="a"
                 href={`tel:${PHONE}`}
                 aria-label="call us"
@@ -69,6 +75,17 @@ const Header: React.FC = () => {
                 sx={{ color: colors.text, width: 48 }}
               >
                 <PhoneIcon sx={{ fontSize: 28 }} />
+              </IconButton>
+
+              <Logo />
+
+              <IconButton
+                aria-label="menu"
+                edge="start"
+                onClick={() => setOpen(true)}
+                sx={{ color: colors.text, width: 48 }}
+              >
+                <MenuIcon sx={{ fontSize: 32 }} />
               </IconButton>
             </Box>
           ) : (
@@ -128,7 +145,11 @@ const Header: React.FC = () => {
           }}
         >
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 1.5 }}>
-            <IconButton aria-label="close menu" onClick={() => setOpen(false)} sx={{ color: colors.text }}>
+            <IconButton
+              aria-label="close menu"
+              onClick={() => setOpen(false)}
+              sx={{ color: colors.text }}
+            >
               <CloseIcon sx={{ fontSize: 32 }} />
             </IconButton>
           </Box>
