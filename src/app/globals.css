@@ -8,7 +8,10 @@
 html,
 body {
   max-width: 100%;
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) prevents the horizontal scrollbar from the wide
+     watermark text WITHOUT creating a scroll container — which would break
+     `position: sticky` on the header. */
+  overflow-x: clip;
 }
 
 body {
