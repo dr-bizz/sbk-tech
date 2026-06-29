@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CtaSection from '@/components/Layout/CtaSection';
 import Reveal from '@/components/Layout/Reveal';
+import JsonLd from '@/components/seo/JsonLd';
+import { PAGES, webPageGraph } from '@/lib/seo';
 import { colors } from '@/styles/theme';
 
 const reasons = [
@@ -29,6 +31,7 @@ const reasons = [
 export default function Home() {
   return (
     <Box>
+      <JsonLd data={webPageGraph(PAGES.home)} />
       {/* Hero */}
       <Container sx={{ py: { xs: 5, sm: 8 } }}>
         <Box
