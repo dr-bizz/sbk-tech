@@ -18,7 +18,7 @@ const paragraphs: string[] = [
 const BusinessDevelopmentPage: React.FC = () => {
   return (
     <Box>
-      <Box sx={{ py: { xs: '30px', md: '70px' } }}>
+      <Box sx={{ py: { xs: '30px', sm: '70px' } }}>
         <Container>
           <Reveal delay={200} shift sx={{ maxWidth: 820, mx: 'auto' }}>
             <Typography

@@ -11,7 +11,7 @@ const ContactPage: React.FC = () => {
   return (
     <Box>
       {/* Google map */}
-      <Box sx={{ width: '100%', height: { xs: 300, md: 400 }, lineHeight: 0 }}>
+      <Box sx={{ width: '100%', height: { xs: 300, sm: 400 }, lineHeight: 0 }}>
         <iframe
           title="Southbrook Technologies location"
           src="https://maps.google.com/maps?q=110%20Celestial%20Way%20Alpharetta%20GA%2030004&t=&z=11&ie=UTF8&iwloc=&output=embed"
@@ -23,10 +23,10 @@ const ContactPage: React.FC = () => {
         />
       </Box>
 
-      <Container sx={{ py: { xs: '30px', md: '70px' } }}>
+      <Container sx={{ py: { xs: '30px', sm: '70px' } }}>
         <Grid container spacing={8}>
           {/* Left column — company info */}
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Grid size={{ xs: 12, sm: 4 }}>
             <Reveal delay={200} shift>
             <Box sx={{ mb: 2 }}>
               <Image src="/images/logo.png" alt="SOUTHBROOK TECHNOLOGIES" width={80} height={74} />
@@ -68,7 +68,7 @@ const ContactPage: React.FC = () => {
           </Grid>
 
           {/* Right column — form */}
-          <Grid size={{ xs: 12, md: 8 }}>
+          <Grid size={{ xs: 12, sm: 8 }}>
             <Reveal delay={300} shift>
               <Typography
                 variant="h3"

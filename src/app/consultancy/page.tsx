@@ -47,7 +47,8 @@ const rows: Row[] = [
     alt: 'Another high-temp antenna mold for a parabolic reflector',
   },
   {
-    title: 'Urethane tooling board is often marketed for high temp applications',
+    title:
+      'Urethane tooling board is often marketed for high temp applications',
     paras: [
       'Urethane tooling board is often marketed for high temp applications. It can become unstable at temperatures above about 200F. This 400F test sample has bowed 0.040” in the middle.',
     ],
@@ -80,16 +81,23 @@ const rows: Row[] = [
   },
 ];
 
-const ContentRow: React.FC<{ row: Row; imageLeft: boolean }> = ({ row, imageLeft }) => (
+const ContentRow: React.FC<{ row: Row; imageLeft: boolean }> = ({
+  row,
+  imageLeft,
+}) => (
   <Box
     sx={{
       display: 'flex',
-      flexDirection: { xs: 'column', md: imageLeft ? 'row' : 'row-reverse' },
+      flexDirection: { xs: 'column', sm: imageLeft ? 'row' : 'row-reverse' },
       alignItems: 'center',
-      gap: { xs: 3, md: 6 },
+      gap: { xs: 3, sm: 6 },
     }}
   >
-    <Reveal delay={300} shift sx={{ width: { xs: '100%', md: '55%' } }}>
+    <Reveal
+      delay={300}
+      shift
+      sx={{ width: { xs: '100%', sm: '50%' }, maxWidth: 600 }}
+    >
       <Image
         src={row.image}
         alt={row.alt}
@@ -98,7 +106,7 @@ const ContentRow: React.FC<{ row: Row; imageLeft: boolean }> = ({ row, imageLeft
         style={{ width: '100%', height: 'auto', borderRadius: 8 }}
       />
     </Reveal>
-    <Reveal delay={500} shift sx={{ width: { xs: '100%', md: '45%' } }}>
+    <Reveal delay={500} shift sx={{ width: { xs: '100%', sm: '50%' } }}>
       <Typography
         variant="h3"
         component="h3"
@@ -121,19 +129,33 @@ const ConsultancyPage: React.FC = () => {
       {/* Page header / intro */}
       <Box
         className="page-watermark"
-        sx={{ position: 'relative', overflow: 'hidden', pt: { xs: '30px', md: '70px' }, pb: { xs: '50px', md: '100px' } }}
+        sx={{
+          position: 'relative',
+          overflow: 'hidden',
+          pt: { xs: '30px', sm: '70px' },
+          pb: { xs: '50px', sm: '100px' },
+        }}
       >
-        <Watermark words={[{ text: 'Consu-', count: 3 }, { text: 'ltancy', count: 4 }]} />
+        <Watermark
+          words={[
+            { text: 'Consu-', count: 3 },
+            { text: 'ltancy', count: 4 },
+          ]}
+        />
         <Container sx={{ position: 'relative', zIndex: 1 }}>
           <Box
             sx={{
               display: 'flex',
-              flexDirection: { xs: 'column', md: 'row-reverse' },
+              flexDirection: { xs: 'column', sm: 'row-reverse' },
               alignItems: 'center',
-              gap: { xs: 3, md: 6 },
+              gap: { xs: 3, sm: 6 },
             }}
           >
-            <Reveal delay={100} shift sx={{ width: { xs: '100%', md: '55%' } }}>
+            <Reveal
+              delay={100}
+              shift
+              sx={{ width: { xs: '100%', sm: '50%' }, maxWidth: 600 }}
+            >
               <Image
                 src="/images/consultancy-main.jpg"
                 alt="Embraer EMB145 radome and repair mold"
@@ -143,29 +165,46 @@ const ConsultancyPage: React.FC = () => {
                 priority
               />
             </Reveal>
-            <Reveal delay={200} sx={{ width: { xs: '100%', md: '45%' } }}>
-              <Typography variant="h1" component="h1" sx={{ fontSize: '30px', fontWeight: 500, mb: 2 }}>
+            <Reveal delay={200} sx={{ width: { xs: '100%', sm: '50%' } }}>
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{ fontSize: '30px', fontWeight: 500, mb: 2 }}
+              >
                 Consultancy
               </Typography>
-              <Typography variant="h3" component="h2" sx={{ fontSize: '18px', fontWeight: 600, mb: 2, lineHeight: 1.5 }}>
+              <Typography
+                variant="h3"
+                component="h2"
+                sx={{
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  mb: 2,
+                  lineHeight: 1.5,
+                }}
+              >
                 Composite Tooling And Manufacturing Process Consulting
               </Typography>
               <Typography sx={{ mb: 1.5 }}>
-                We have represented a lot of composite material and process equipment manufacturers
-                over the past 30+ years and we have seen what works (and what doesn’t work). In the
-                process of marketing and selling their products, some manufacturers can be
-                “optimistic”. The last thing any company wants to do is commit their precious capital
-                budget to a “beta test” technology.
+                We have represented a lot of composite material and process
+                equipment manufacturers over the past 30+ years and we have seen
+                what works (and what doesn’t work). In the process of marketing
+                and selling their products, some manufacturers can be
+                “optimistic”. The last thing any company wants to do is commit
+                their precious capital budget to a “beta test” technology.
               </Typography>
               <Typography sx={{ mb: 1.5 }}>
-                The following scan shows an Embraer EMB145 radome and repair mold.
+                The following scan shows an Embraer EMB145 radome and repair
+                mold.
               </Typography>
               <Typography sx={{ mb: 1.5 }}>
-                This job required that we first visit with the customer and examine the part (radome)
-                that they were trying to repair. Southbrook Technologies personnel later returned and
-                spent several days training customer composite technicians how to plan, set-up and
-                build the required radome repair mold. Economics are such that a good bond repair mold
-                will often pay for itself with the first repair part.
+                This job required that we first visit with the customer and
+                examine the part (radome) that they were trying to repair.
+                Southbrook Technologies personnel later returned and spent
+                several days training customer composite technicians how to
+                plan, set-up and build the required radome repair mold.
+                Economics are such that a good bond repair mold will often pay
+                for itself with the first repair part.
               </Typography>
             </Reveal>
           </Box>
@@ -178,7 +217,10 @@ const ConsultancyPage: React.FC = () => {
         return (
           <Box
             key={row.title}
-            sx={{ backgroundColor: imageLeft ? colors.lightBlue : colors.white, py: { xs: '30px', md: '70px' } }}
+            sx={{
+              backgroundColor: imageLeft ? colors.lightBlue : colors.white,
+              py: { xs: '30px', sm: '70px' },
+            }}
           >
             <Container>
               <ContentRow row={row} imageLeft={imageLeft} />
@@ -188,13 +230,22 @@ const ConsultancyPage: React.FC = () => {
       })}
 
       {/* Pricing / important text */}
-      <Box sx={{ backgroundColor: colors.lightBlue, py: { xs: '30px', md: '70px' } }}>
+      <Box
+        sx={{
+          backgroundColor: colors.lightBlue,
+          py: { xs: '30px', sm: '70px' },
+        }}
+      >
         <Container>
-          <Reveal delay={200} shift sx={{ textAlign: 'center', maxWidth: 760, mx: 'auto' }}>
+          <Reveal
+            delay={200}
+            shift
+            sx={{ textAlign: 'center', maxWidth: 760, mx: 'auto' }}
+          >
             <Typography sx={{ fontSize: '18px', mb: 3, lineHeight: 1.6 }}>
-              Cost to our customers for consulting services is $85.00 per hour, plus actual travel and
-              material expenses. We provide written estimates and detailed billing, along with receipt
-              documentation.
+              Cost to our customers for consulting services is $85.00 per hour,
+              plus actual travel and material expenses. We provide written
+              estimates and detailed billing, along with receipt documentation.
             </Typography>
             <Button component={Link} href="/contact" variant="contained">
               Get in Touch
@@ -204,7 +255,10 @@ const ConsultancyPage: React.FC = () => {
       </Box>
 
       {/* CTA */}
-      <CtaSection heading="Need help with improving Tooling and Processes?" buttonLabel="Speak to a Consultant" />
+      <CtaSection
+        heading="Need help with improving Tooling and Processes?"
+        buttonLabel="Speak to a Consultant"
+      />
     </Box>
   );
 };

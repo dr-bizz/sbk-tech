@@ -30,17 +30,17 @@ export default function Home() {
   return (
     <Box>
       {/* Hero */}
-      <Container sx={{ py: { xs: 5, md: 8 } }}>
+      <Container sx={{ py: { xs: 5, sm: 8 } }}>
         <Box
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
+            flexDirection: { xs: 'column', sm: 'row' },
             justifyContent: 'space-between',
             alignItems: 'center',
-            gap: { xs: 4, md: 6 },
+            gap: { xs: 4, sm: 6 },
           }}
         >
-          <Reveal delay={150} sx={{ width: '100%', maxWidth: { md: 480 } }}>
+          <Reveal delay={150} sx={{ width: '100%', maxWidth: { sm: 480 } }}>
             <Typography
               variant="h1"
               component="h1"
@@ -82,7 +82,7 @@ export default function Home() {
           <Reveal
             delay={300}
             shift
-            sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' }, flexShrink: 0 }}
+            sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'flex-end' }, flexShrink: 0 }}
           >
             <Image
               src="/images/new-homepage.jpg"
@@ -97,7 +97,7 @@ export default function Home() {
       </Container>
 
       {/* Why work with a composite process specialist */}
-      <Box sx={{ backgroundColor: colors.lightBlue, py: { xs: '30px', md: '70px' } }}>
+      <Box sx={{ backgroundColor: colors.lightBlue, py: { xs: '30px', sm: '70px' } }}>
         <Container>
           <Reveal delay={200}>
             <Typography
@@ -111,7 +111,7 @@ export default function Home() {
 
           <Grid container spacing={6}>
             {reasons.map((r, i) => (
-              <Grid size={{ xs: 12, md: 4 }} key={r.title}>
+              <Grid size={{ xs: 12, sm: 4 }} key={r.title}>
                 <Reveal delay={200 + i * 150} shift sx={{ textAlign: 'center' }}>
                   <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>
                     <Image src={r.icon} alt={r.title} width={110} height={110} />
@@ -128,7 +128,7 @@ export default function Home() {
       </Box>
 
       {/* Testimonial */}
-      <Container sx={{ py: { xs: '30px', md: '70px' } }}>
+      <Container sx={{ py: { xs: '30px', sm: '70px' } }}>
         <Reveal delay={200} shift sx={{ textAlign: 'center', maxWidth: 820, mx: 'auto' }}>
           <Image
             src="/images/quote-marks-1.png"

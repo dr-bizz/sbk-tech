@@ -25,7 +25,7 @@ const columns: string[][] = [
 const AboutPage: React.FC = () => {
   return (
     <Box>
-      <Box sx={{ position: 'relative', overflow: 'hidden', pt: { xs: '30px', md: '70px' }, pb: { xs: '50px', md: '150px' } }}>
+      <Box sx={{ position: 'relative', overflow: 'hidden', pt: { xs: '30px', sm: '70px' }, pb: { xs: '50px', sm: '150px' } }}>
         <Watermark />
         <Container sx={{ position: 'relative', zIndex: 1 }}>
           <Reveal delay={200}>
@@ -43,7 +43,7 @@ const AboutPage: React.FC = () => {
 
           <Grid container spacing={6}>
             {columns.map((col, i) => (
-              <Grid size={{ xs: 12, md: 4 }} key={i}>
+              <Grid size={{ xs: 12, sm: 4 }} key={i}>
                 <Reveal delay={400 + i * 100} shift>
                   {col.map((p, j) => (
                     <Typography key={j} sx={{ mb: 2, fontSize: '15px', lineHeight: 1.6 }}>

@@ -28,7 +28,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
         position: 'relative',
         backgroundColor: colors.dark,
         color: colors.white,
-        py: { xs: '80px', md: '130px' },
+        py: { xs: '80px', sm: '130px' },
         overflow: 'hidden',
         textAlign: 'center',
       }}
