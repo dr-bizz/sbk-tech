@@ -1,25 +1,23 @@
 'use client';
 
 import React from 'react';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { CacheProvider } from '@emotion/react';
 import { SnackbarProvider } from 'notistack';
-import createEmotionCache from '@/utils/createEmotionCache';
 import theme from '@/styles/theme';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 
-const clientSideEmotionCache = createEmotionCache();
-
 /**
- * Client-side providers (MUI theme/emotion cache, notistack) plus the page
- * chrome. Kept separate so the root layout can remain a server component and
- * use the Next.js Metadata API.
+ * Client-side providers (MUI theme, notistack) plus the page chrome.
+ * AppRouterCacheProvider injects emotion's critical CSS during SSR via
+ * useServerInsertedHTML, so styles are present in the initial HTML — this
+ * prevents the flash of unstyled content on first paint.
  */
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <CacheProvider value={clientSideEmotionCache}>
+    <AppRouterCacheProvider options={{ key: 'mui' }}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <SnackbarProvider maxSnack={3}>
@@ -30,6 +28,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           </div>
         </SnackbarProvider>
       </ThemeProvider>
-    </CacheProvider>
+    </AppRouterCacheProvider>
   );
 }

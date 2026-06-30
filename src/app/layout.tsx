@@ -12,10 +12,8 @@ export const metadata: Metadata = {
     'max-image-preview': 'large',
     'max-video-preview': -1,
   },
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/images/logo.png',
-  },
+  // Favicon / icons are generated from app/favicon.ico, app/icon.png and
+  // app/apple-icon.png via Next.js file conventions.
 };
 
 export const viewport: Viewport = {
